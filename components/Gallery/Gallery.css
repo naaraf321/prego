@@ -1,0 +1,133 @@
+/* ============================================================
+   GALLERY — automatically adapts to any image count
+============================================================ */
+.gal{
+  display:grid;
+  gap:clamp(10px,1.2vw,16px);
+}
+
+.gi{
+  position:relative;
+  min-width:0;
+  overflow:hidden;
+  background:#121212;
+  border:1px solid rgba(245,242,236,.06);
+  transition:border-color .42s var(--ease),transform .42s var(--ease);
+}
+
+/* Keep photographs in their original colour at all times. */
+.gi img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:none!important;
+  transform:scale(1);
+  transition:transform .75s var(--ease);
+}
+
+/* Subtle premium hover: no grayscale, no dramatic colour change. */
+@media (hover:hover) and (pointer:fine){
+  .gi:hover{border-color:rgba(217,164,65,.42)}
+  .gi:hover img{transform:scale(1.018)}
+}
+
+.gi::after{
+  content:"";
+  position:absolute;
+  inset:55% 0 0;
+  z-index:1;
+  pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(5,5,5,.5));
+  opacity:.58;
+  transition:opacity .35s var(--ease);
+}
+
+.gallery-caption{
+  position:absolute;
+  left:18px;
+  bottom:16px;
+  z-index:2;
+  max-width:78%;
+  color:rgba(242,200,119,.9);
+  font-size:8.5px;
+  line-height:1.5;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  opacity:.86;
+  transform:none;
+}
+
+/* 1 image */
+.gal--1{grid-template-columns:1fr}
+.gal--1 .gi{aspect-ratio:16/8}
+
+/* 2 images */
+.gal--2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.gal--2 .gi{aspect-ratio:4/3}
+
+/* 3 images */
+.gal--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.gal--3 .gi{aspect-ratio:4/3}
+
+/* 4 images */
+.gal--4{grid-template-columns:repeat(2,minmax(0,1fr))}
+.gal--4 .gi{aspect-ratio:4/3}
+
+/* 5+ images: clean 3-column grid with intelligent final row. */
+.gal--many{grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-flow:row dense}
+.gal--many .gi{grid-column:span 4;aspect-ratio:4/3}
+
+/* If one image remains in the final row, make it a full editorial feature. */
+.gal--many.gal--rem-1 .gi:last-child{
+  grid-column:1/-1;
+  aspect-ratio:16/7;
+}
+
+/* If two images remain, give each half the row. */
+.gal--many.gal--rem-2 .gi:nth-last-child(-n+2){
+  grid-column:span 6;
+  aspect-ratio:4/3;
+}
+
+@media (max-width:980px){
+  .gal--3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gal--3 .gi:last-child{grid-column:1/-1;aspect-ratio:16/8}
+
+  .gal--many{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gal--many .gi,
+  .gal--many.gal--rem-1 .gi:last-child,
+  .gal--many.gal--rem-2 .gi:nth-last-child(-n+2){
+    grid-column:auto;
+    aspect-ratio:4/3;
+  }
+  .gal--many .gi:last-child:nth-child(odd){grid-column:1/-1;aspect-ratio:16/8}
+}
+
+@media (max-width:760px){
+  .gal,
+  .gal--1,
+  .gal--2,
+  .gal--3,
+  .gal--4,
+  .gal--many{
+    grid-template-columns:1fr;
+    grid-template-rows:auto;
+  }
+  .gal .gi,
+  .gal--3 .gi:last-child,
+  .gal--many .gi,
+  .gal--many .gi:last-child:nth-child(odd),
+  .gal--many.gal--rem-1 .gi:last-child,
+  .gal--many.gal--rem-2 .gi:nth-last-child(-n+2){
+    grid-column:auto;
+    grid-row:auto;
+    min-height:0;
+    aspect-ratio:4/3;
+  }
+  .gallery-caption{font-size:8px;letter-spacing:.14em}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .gi,.gi img,.gi::after{transition:none}
+  .gi:hover img{transform:none}
+}

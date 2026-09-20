@@ -1,0 +1,58 @@
+/* ============================================================
+   BRAND LOCKUP
+============================================================ */
+.brand{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  line-height:1;
+  gap:.34em;
+  text-align:center;
+}
+.brand-word{
+  font-family:'Archivo','Helvetica Neue',Arial,sans-serif;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.015em;
+  color:var(--gold);
+  display:block;
+}
+@supports (-webkit-background-clip:text) or (background-clip:text){
+  .brand-word{
+    background:linear-gradient(180deg,#f8d489 0%,#e3a844 46%,#bb7623 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    color:transparent;
+    filter:drop-shadow(2px 2px 0 rgba(179,48,31,.92));
+  }
+}
+.brand-rule{
+  width:100%;
+  color:var(--gold);
+  display:block;
+  opacity:.95;
+}
+.brand-sub{
+  font-family:'Archivo',sans-serif;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.32em;
+  color:var(--gold);
+  display:block;
+}
+
+/* sizes */
+.brand--nav{gap:.2em}
+.brand--nav .brand-word{font-size:clamp(17px,2vw,21px)}
+.brand--nav .brand-sub{font-size:6.5px;letter-spacing:.3em}
+.brand--nav .brand-rule{width:100%}
+
+.brand--hero{gap:.5em;width:min(88vw,880px)}
+.brand--hero .brand-word{font-size:clamp(3.4rem,15.5vw,12rem)}
+.brand--hero .brand-sub{font-size:clamp(.62rem,1.9vw,1.4rem);letter-spacing:.42em}
+.brand--hero .brand-rule{width:min(60%,420px)}
+
+.brand--footer .brand-word{font-size:clamp(22px,3vw,34px)}
+.brand--footer .brand-sub{font-size:9px}
+

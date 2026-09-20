@@ -1,0 +1,99 @@
+/* ============================================================
+   RESERVATIONS
+============================================================ */
+.reserve{
+  position:relative;
+  background:linear-gradient(180deg,#0a0a0a,#0d0d0d 40%,#0a0a0a);
+  border-top:1px solid var(--line);
+  overflow:hidden;
+}
+.reserve::before{
+  content:'';
+  position:absolute;top:-30%;left:50%;transform:translateX(-50%);
+  width:min(900px,120vw);height:600px;
+  background:radial-gradient(ellipse,rgba(217,164,65,.08),transparent 65%);
+  pointer-events:none;
+}
+.reserve-inner{position:relative;z-index:2}
+.reserve-head{text-align:center;max-width:820px;margin:0 auto clamp(46px,6vw,74px)}
+.reserve-head .display{margin:22px 0 20px}
+.reserve-head p{color:var(--muted);max-width:52ch;margin:0 auto}
+.reserve-head .label{justify-content:center}
+
+.form-card{
+  max-width:1180px;
+  margin:0 auto;
+  border:1px solid rgba(217,164,65,.22);
+  background:rgba(255,255,255,.012);
+  -webkit-backdrop-filter:blur(6px);
+  backdrop-filter:blur(6px);
+  padding:clamp(8px,1.4vw,16px);
+}
+
+.tableo-shell{
+  position:relative;
+  width:100%;
+  min-height:760px;
+  background:#0b0b0b;
+  overflow:hidden;
+}
+.tableo-frame{
+  display:block;
+  width:100%;
+  height:760px;
+  min-height:760px;
+  border:0;
+  background:#fff;
+  opacity:0;
+  transition:opacity .35s ease;
+}
+.tableo-shell.is-loaded .tableo-frame{opacity:1}
+.tableo-loading{
+  position:absolute;
+  inset:0 0 48px;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  padding:28px;
+  background:
+    radial-gradient(circle at 50% 20%,rgba(217,164,65,.09),transparent 42%),
+    #0b0b0b;
+  color:var(--white);
+  transition:opacity .3s ease,visibility .3s ease;
+}
+.tableo-shell.is-loaded .tableo-loading{opacity:0;visibility:hidden;pointer-events:none}
+.tableo-loading-mark{
+  width:48px;height:48px;border:1px solid rgba(217,164,65,.45);
+  display:grid;place-items:center;color:var(--gold-l);
+  font-family:var(--font-archivo),'Helvetica Neue',Arial,sans-serif;font-weight:900;font-size:1.35rem;
+}
+.tableo-loading div{display:flex;flex-direction:column;gap:4px}
+.tableo-loading strong{font-family:var(--font-archivo),'Helvetica Neue',Arial,sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:.82rem}
+.tableo-loading div span{color:var(--faint);font-size:.78rem}
+.tableo-fallback{
+  min-height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  background:#0d0d0d;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  padding:11px 16px;
+  font-size:11px;
+}
+.tableo-fallback a{color:var(--gold-l);text-transform:uppercase;letter-spacing:.12em;font-weight:600}
+.tableo-fallback a:hover{color:var(--white)}
+
+@media (max-width:900px){
+  .tableo-shell,.tableo-frame{min-height:820px;height:820px}
+}
+@media (max-width:600px){
+  .form-card{padding:5px}
+  .tableo-shell,.tableo-frame{min-height:900px;height:900px}
+  .tableo-loading{inset:0 0 62px;flex-direction:column;text-align:center}
+  .tableo-fallback{min-height:62px;flex-direction:column;gap:3px}
+}

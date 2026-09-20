@@ -1,0 +1,12 @@
+/* Chef section */
+.chef-section{background:linear-gradient(180deg,#0a0a0a 0%,#0d0b08 48%,#090909 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.chef-grid{display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:clamp(42px,8vw,120px)}
+.chef-copy .display{margin:24px 0 28px;max-width:11ch}
+.chef-copy .lede{margin-bottom:30px}
+.chef-principle{font-family:var(--serif);font-size:clamp(1.15rem,2vw,1.55rem);font-style:italic;line-height:1.45;color:rgba(245,242,236,.9);padding:24px 0 24px 24px;border-left:1px solid var(--gold);margin:0 0 38px;max-width:28ch}
+.chef-media{position:relative;min-height:clamp(520px,62vw,780px);overflow:hidden;background:#111;border:1px solid rgba(217,164,65,.18)}
+.chef-media img{object-fit:cover;object-position:center 25%;filter:brightness(.82) contrast(1.06) saturate(.82);transition:transform 1.4s var(--ease),filter .8s var(--ease)}
+.chef-media:hover img{transform:scale(1.035);filter:brightness(.92) contrast(1.07) saturate(.95)}
+
+@media (max-width:1024px){.chef-grid{grid-template-columns:1fr;gap:38px}.chef-media{min-height:680px}}
+@media (max-width:760px){.chef-media{min-height:520px}}

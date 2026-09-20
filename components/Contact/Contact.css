@@ -1,0 +1,69 @@
+/* ============================================================
+   LOCATION
+============================================================ */
+.loc-grid{
+  display:grid;
+  grid-template-columns:1fr 1.15fr;
+  gap:clamp(34px,5vw,80px);
+  align-items:stretch;
+}
+.loc-info{display:flex;flex-direction:column;gap:clamp(26px,3vw,36px)}
+.loc-info .display{margin-bottom:6px}
+.loc-block h3{
+  font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:12px;font-weight:500;
+}
+.loc-block p,.loc-block a{color:rgba(245,242,236,.78);font-size:.96rem;line-height:1.8}
+.loc-block a:hover{color:var(--gold-l)}
+.loc-block address{font-style:normal;color:rgba(245,242,236,.78);font-size:.96rem;line-height:1.8}
+.loc-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+
+/* Opening hours — lunch + dinner periods */
+.loc-hours{display:flex;flex-direction:column;gap:4px;max-width:430px}
+.hours-group{
+  display:grid;
+  grid-template-columns:minmax(92px,auto) 1fr;
+  gap:clamp(20px,3vw,42px);
+  align-items:start;
+  padding:14px 0;
+  border-bottom:1px solid rgba(245,242,236,.08);
+}
+.hours-group:first-child{padding-top:0}
+.hours-days{color:rgba(245,242,236,.72);font-size:.92rem;white-space:nowrap}
+.hours-periods{display:flex;flex-direction:column;gap:7px}
+.hours-period{
+  display:grid;
+  grid-template-columns:62px minmax(112px,auto);
+  gap:12px;
+  color:var(--gold-l);
+  font-size:.92rem;
+  white-space:nowrap;
+}
+.hours-period-label{
+  color:rgba(245,242,236,.42);
+  text-transform:uppercase;
+  font-size:8.5px;
+  letter-spacing:.14em;
+  align-self:center;
+}
+
+.map{
+  position:relative;
+  min-height:420px;
+  border:1px solid var(--line);
+  overflow:hidden;
+  background:#0d0d0d;
+}
+.map iframe{
+  width:100%;height:100%;min-height:420px;
+  border:0;
+  filter:none;
+}
+.map::after{content:none}
+
+@media (max-width:1024px){.loc-grid{grid-template-columns:1fr}}
+@media (max-width:600px){
+  .hours-group{grid-template-columns:1fr;gap:9px}
+  .hours-period{grid-template-columns:62px auto}
+  .map,.map iframe{min-height:360px}
+}

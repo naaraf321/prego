@@ -1,0 +1,79 @@
+/* ============================================================
+   FOOTER
+============================================================ */
+.footer{
+  background:#060606;
+  border-top:1px solid var(--line);
+  padding-top:clamp(64px,8vw,110px);
+}
+.foot-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1.2fr;
+  gap:clamp(30px,4vw,60px);
+  padding-bottom:clamp(50px,6vw,80px);
+}
+.foot-brand p{
+  color:var(--muted);font-size:.92rem;max-width:34ch;margin-top:22px;
+}
+.foot-col h5{
+  font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:20px;
+}
+.foot-col ul{display:flex;flex-direction:column;gap:11px}
+.foot-col a,.foot-col li{
+  font-size:.9rem;color:rgba(245,242,236,.62);
+  transition:color .35s,padding-left .35s var(--ease);
+}
+.foot-col a:hover{color:var(--gold-l);padding-left:5px}
+.foot-hours{display:flex;flex-direction:column;gap:14px}
+.foot-hours-group{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;font-size:.88rem;color:rgba(245,242,236,.62)}
+.foot-hours-days{white-space:nowrap;color:rgba(245,242,236,.68)}
+.foot-hours-periods{display:flex;flex-direction:column;gap:5px;text-align:right}
+.foot-hours-periods span{display:flex;justify-content:flex-end;gap:8px;color:rgba(245,242,236,.85);white-space:nowrap}
+.foot-hours-periods small{font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,242,236,.35);align-self:center}
+
+.socials{display:flex;gap:10px;margin-top:24px}
+.socials a{
+  width:40px;height:40px;
+  border:1px solid var(--line);
+  display:grid;place-items:center;
+  font-size:9px;letter-spacing:.06em;
+  color:rgba(245,242,236,.6);
+  transition:border-color .4s,color .4s,background .4s,transform .4s var(--ease);
+}
+.socials a:hover{border-color:var(--gold);color:#0a0a0a;background:var(--gold);transform:translateY(-3px)}
+
+.statement{
+  border-top:1px solid var(--line);
+  padding:clamp(50px,7vw,90px) 0 clamp(36px,5vw,60px);
+  text-align:center;
+}
+.statement h2{
+  font-family:'Archivo',sans-serif;font-weight:900;
+  text-transform:uppercase;
+  font-size:clamp(2.2rem,9vw,8rem);
+  line-height:.88;letter-spacing:-.045em;
+  color:transparent;
+  background:linear-gradient(180deg,#f7d78f,#dda63f 50%,#a2701c);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+@supports not ((-webkit-background-clip:text) or (background-clip:text)){
+  .statement h2{color:var(--gold);-webkit-text-fill-color:var(--gold)}
+}
+.statement .cta{margin-top:34px;display:flex;justify-content:center;flex-wrap:wrap;gap:14px}
+
+.foot-base{
+  border-top:1px solid var(--line);
+  padding:26px 0 30px;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  gap:14px;
+  font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);
+}
+.foot-base a:hover{color:var(--gold)}
+
+.foot-col h3{font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-weight:500}
+@media (max-width:1180px){.foot-grid{grid-template-columns:1fr 1fr;gap:44px}}
+@media (max-width:760px){.foot-grid{grid-template-columns:1fr;gap:40px}.foot-base{flex-direction:column;align-items:flex-start;text-align:left}.statement .cta{flex-direction:column}.statement .cta .btn{width:100%}}
+
+@media (max-width:420px){.foot-hours-group{grid-template-columns:1fr;gap:7px}.foot-hours-periods{text-align:left}.foot-hours-periods span{justify-content:flex-start}}

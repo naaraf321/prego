@@ -1,0 +1,53 @@
+/* Lightweight image loading state. It does not change image dimensions or layout. */
+.image-loader{
+  position:absolute;
+  inset:0;
+  display:block;
+  overflow:hidden;
+  background:#111;
+}
+.image-loader .skeleton-image{
+  opacity:0;
+  transition:opacity .45s var(--ease);
+}
+.image-loader.is-loaded .skeleton-image{opacity:1}
+.image-skeleton{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  overflow:hidden;
+  background:linear-gradient(110deg,#101010 8%,#181613 28%,#101010 48%);
+  background-size:220% 100%;
+  animation:prego-skeleton 1.45s linear infinite;
+}
+.image-skeleton::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 50% 50%,rgba(217,164,65,.055),transparent 60%);
+}
+.image-fallback{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  display:grid;
+  place-content:center;
+  gap:8px;
+  text-align:center;
+  background:radial-gradient(circle at 50% 45%,rgba(217,164,65,.08),transparent 58%),#101010;
+  color:var(--gold);
+}
+.image-fallback span{
+  font-family:var(--font-archivo),'Helvetica Neue',Arial,sans-serif;
+  font-size:clamp(1.1rem,3vw,2rem);
+  font-weight:900;
+  letter-spacing:.05em;
+}
+.image-fallback small{
+  color:var(--faint);
+  font-size:8px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+@keyframes prego-skeleton{to{background-position:-220% 0}}
+@media (prefers-reduced-motion:reduce){.image-skeleton{animation:none}}
