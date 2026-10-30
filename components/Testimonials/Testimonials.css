@@ -1,0 +1,1489 @@
+/* ============================================================
+   PREGO REVIEWS
+============================================================ */
+
+.pregoReviews {
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 12% 10%,
+      rgba(217, 164, 65, 0.035),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 40%,
+      rgba(217, 164, 65, 0.02),
+      transparent 34%
+    ),
+    #080808;
+
+  border-top:
+    1px solid rgba(245, 242, 236, 0.07);
+
+  border-bottom:
+    1px solid rgba(245, 242, 236, 0.07);
+}
+
+
+.pregoReviews__wrap {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* ============================================================
+   TOP HERO
+============================================================ */
+
+.pregoReviews__hero {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.08fr)
+    minmax(560px, 0.92fr);
+
+  align-items: center;
+
+  gap:
+    clamp(60px, 7vw, 130px);
+
+  min-height: 480px;
+}
+
+
+/* ============================================================
+   LEFT CONTENT
+============================================================ */
+
+.pregoReviews__intro {
+  max-width: 920px;
+}
+
+
+.pregoReviews__eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  color: var(--gold);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.32em;
+}
+
+
+.pregoReviews__eyebrow::before {
+  content: "";
+
+  width: 38px;
+
+  height: 1px;
+
+  background:
+    rgba(217, 164, 65, 0.9);
+}
+
+
+.pregoReviews__title {
+  margin:
+    34px 0 0;
+
+  font-family:
+    var(--serif),
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      4rem,
+      7vw,
+      8rem
+    );
+
+  font-weight: 400;
+
+  line-height: 0.93;
+
+  letter-spacing:
+    -0.055em;
+
+  color:
+    #f3f0ea;
+}
+
+
+.pregoReviews__title em {
+  color:
+    var(--gold-l);
+
+  font-style:
+    italic;
+
+  font-weight:
+    400;
+}
+
+
+.pregoReviews__description {
+  margin-top:
+    34px;
+
+  max-width:
+    48ch;
+
+  color:
+    rgba(245, 242, 236, 0.57);
+
+  font-size:
+    clamp(
+      0.95rem,
+      1.1vw,
+      1.08rem
+    );
+
+  line-height:
+    1.7;
+}
+
+
+/* ============================================================
+   RIGHT RATING AREA
+============================================================ */
+
+.pregoReviews__ratingArea {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+/* ============================================================
+   BIG PREMIUM PANEL
+============================================================ */
+
+.pregoReviews__ratingPanel {
+  position: relative;
+
+  width: 100%;
+
+  max-width:
+    760px;
+
+  padding:
+    28px 32px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid rgba(217, 164, 65, 0.42);
+
+  border-radius:
+    27px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(217, 164, 65, 0.085),
+      rgba(20, 17, 13, 0.73) 30%,
+      rgba(7, 7, 7, 0.96) 75%
+    );
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+
+/* gold highlight across top */
+.pregoReviews__ratingPanel::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  right: 70px;
+
+  width: 230px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--gold),
+      transparent
+    );
+
+  box-shadow:
+    0 0 20px
+    rgba(217, 164, 65, 0.65);
+}
+
+
+/* ambient glow */
+.pregoReviews__ratingPanel::after {
+  content: "";
+
+  position: absolute;
+
+  width: 360px;
+
+  height: 360px;
+
+  top: -270px;
+
+  right: -40px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(217, 164, 65, 0.19),
+      transparent 67%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   PLATFORM ROW
+============================================================ */
+
+.pregoReviews__ratingRow {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(230px, 1.2fr)
+    1px
+    auto
+    auto
+    58px;
+
+  align-items:
+    center;
+
+  gap:
+    26px;
+
+  min-height:
+    130px;
+
+  color:
+    inherit;
+
+  text-decoration:
+    none;
+}
+
+
+.pregoReviews__ratingRow
++
+.pregoReviews__ratingRow {
+  padding-top:
+    24px;
+
+  margin-top:
+    10px;
+
+  border-top:
+    1px solid
+    rgba(245, 242, 236, 0.12);
+}
+
+
+/* ============================================================
+   PLATFORM SIDE
+============================================================ */
+
+.pregoReviews__platform {
+  display: flex;
+
+  align-items:
+    center;
+
+  gap:
+    22px;
+
+  min-width:
+    0;
+}
+
+
+/* Logo circle */
+
+.pregoReviews__logoCircle {
+  flex:
+    0 0 auto;
+
+  width:
+    72px;
+
+  height:
+    72px;
+
+  padding:
+    12px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  overflow:
+    hidden;
+
+  border-radius:
+    50%;
+
+  border:
+    1px solid
+    rgba(217, 164, 65, 0.4);
+
+  background:
+    rgba(13, 13, 13, 0.92);
+
+  box-shadow:
+    inset 0 0 0 1px
+    rgba(255, 255, 255, 0.025);
+}
+
+
+.pregoReviews__brandSvg {
+  display:
+    block;
+
+  width:
+    100%;
+
+  height:
+    100%;
+}
+
+
+.pregoReviews__brandSvg--google {
+  padding:
+    3px;
+}
+
+
+.pregoReviews__fallbackLogo {
+  color:
+    var(--gold);
+
+  font-size:
+    1.6rem;
+
+  font-weight:
+    800;
+}
+
+
+/* Platform text */
+
+.pregoReviews__platformText {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    8px;
+}
+
+
+.pregoReviews__platformText strong {
+  color:
+    #f5f2ec;
+
+  font-size:
+    12px;
+
+  font-weight:
+    700;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.2em;
+}
+
+
+.pregoReviews__platformText span {
+  color:
+    rgba(245, 242, 236, 0.43);
+
+  font-size:
+    9px;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.2em;
+}
+
+
+/* ============================================================
+   VERTICAL DIVIDER
+============================================================ */
+
+.pregoReviews__verticalLine {
+  display:
+    block;
+
+  width:
+    1px;
+
+  height:
+    92px;
+
+  background:
+    rgba(245, 242, 236, 0.15);
+}
+
+
+/* ============================================================
+   SCORE
+============================================================ */
+
+.pregoReviews__score {
+  display:
+    flex;
+
+  align-items:
+    baseline;
+
+  gap:
+    6px;
+
+  white-space:
+    nowrap;
+}
+
+
+.pregoReviews__score strong {
+  font-family:
+    var(--serif),
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      3.5rem,
+      4.5vw,
+      4.8rem
+    );
+
+  font-weight:
+    400;
+
+  line-height:
+    0.9;
+
+  letter-spacing:
+    -0.065em;
+
+  color:
+    #f4f1eb;
+}
+
+
+.pregoReviews__score span {
+  color:
+    rgba(245, 242, 236, 0.55);
+
+  font-size:
+    0.85rem;
+}
+
+
+/* ============================================================
+   STARS
+============================================================ */
+
+.pregoReviews__platformStars {
+  color:
+    var(--gold);
+
+  font-size:
+    clamp(
+      12px,
+      1.1vw,
+      17px
+    );
+
+  letter-spacing:
+    0.09em;
+
+  white-space:
+    nowrap;
+}
+
+
+/* ============================================================
+   EXTERNAL LINK CIRCLE
+============================================================ */
+
+.pregoReviews__external {
+  width:
+    58px;
+
+  height:
+    58px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  justify-self:
+    end;
+
+  border:
+    1px solid
+    rgba(217, 164, 65, 0.8);
+
+  border-radius:
+    50%;
+
+  color:
+    var(--gold-l);
+
+  font-size:
+    1.7rem;
+
+  line-height:
+    1;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* ============================================================
+   RATING HOVER
+============================================================ */
+
+@media (hover:hover) and (pointer:fine) {
+
+  .pregoReviews__ratingRow:hover
+  .pregoReviews__external {
+    transform:
+      translate(3px, -3px);
+
+    color:
+      #080808;
+
+    background:
+      var(--gold);
+  }
+
+
+  .pregoReviews__ratingRow:hover
+  .pregoReviews__platformText strong {
+    color:
+      var(--gold-l);
+  }
+
+}
+
+
+/* ============================================================
+   NOTE UNDER PANEL
+============================================================ */
+
+.pregoReviews__note {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    15px;
+
+  margin-top:
+    20px;
+
+  margin-left:
+    120px;
+
+  color:
+    rgba(217, 164, 65, 0.85);
+
+  font-family:
+    var(--serif),
+    Georgia,
+    serif;
+
+  font-size:
+    1.05rem;
+
+  font-style:
+    italic;
+}
+
+
+.pregoReviews__noteArrow {
+  display:
+    inline-block;
+
+  font-size:
+    1.8rem;
+
+  transform:
+    rotate(-14deg);
+}
+
+
+/* ============================================================
+   SECTION DIVIDER
+============================================================ */
+
+.pregoReviews__divider {
+  width:
+    100%;
+
+  height:
+    1px;
+
+  margin:
+    clamp(40px, 5vw, 65px)
+    0
+    clamp(42px, 5vw, 65px);
+
+  background:
+    rgba(245, 242, 236, 0.1);
+}
+
+
+/* ============================================================
+   REVIEW GRID
+============================================================ */
+
+.pregoReviews__grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap:
+    clamp(
+      15px,
+      1.8vw,
+      25px
+    );
+}
+
+
+/* ============================================================
+   REVIEW CARD
+============================================================ */
+
+.pregoReviews__card {
+  position:
+    relative;
+
+  min-height:
+    385px;
+
+  padding:
+    clamp(
+      28px,
+      2.8vw,
+      38px
+    );
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  overflow:
+    hidden;
+
+  color:
+    inherit;
+
+  text-decoration:
+    none;
+
+  border:
+    1px solid
+    rgba(245, 242, 236, 0.08);
+
+  border-radius:
+    26px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(20, 18, 16, 0.88),
+      rgba(10, 10, 10, 0.98)
+    );
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    background 0.4s ease;
+}
+
+
+.pregoReviews__card::after {
+  content:
+    "";
+
+  position:
+    absolute;
+
+  width:
+    270px;
+
+  height:
+    270px;
+
+  top:
+    -165px;
+
+  right:
+    -155px;
+
+  border-radius:
+    50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(217, 164, 65, 0.1),
+      transparent 70%
+    );
+
+  opacity:
+    0;
+
+  pointer-events:
+    none;
+
+  transition:
+    opacity 0.4s ease;
+}
+
+
+/* ============================================================
+   CARD STARS
+============================================================ */
+
+.pregoReviews__stars {
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  display:
+    flex;
+
+  gap:
+    4px;
+
+  margin-bottom:
+    20px;
+
+  font-size:
+    10px;
+}
+
+
+.pregoReviews__star {
+  color:
+    rgba(217, 164, 65, 0.2);
+}
+
+
+.pregoReviews__star--active {
+  color:
+    var(--gold);
+}
+
+
+/* ============================================================
+   REVIEW TITLE
+============================================================ */
+
+.pregoReviews__reviewTitle {
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  margin-bottom:
+    20px;
+
+  color:
+    var(--gold-l);
+
+  font-size:
+    9px;
+
+  font-weight:
+    600;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.18em;
+}
+
+
+/* ============================================================
+   QUOTE
+============================================================ */
+
+.pregoReviews__quote {
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  flex:
+    1;
+
+  margin:
+    0 0 35px;
+
+  color:
+    #f5f2ec;
+
+  font-family:
+    var(--serif),
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      1.5rem,
+      1.9vw,
+      2rem
+    );
+
+  line-height:
+    1.3;
+
+  letter-spacing:
+    -0.025em;
+}
+
+
+.pregoReviews__quote::before {
+  content:
+    "“";
+
+  display:
+    block;
+
+  height:
+    34px;
+
+  margin:
+    0 0 12px -3px;
+
+  color:
+    var(--gold);
+
+  font-size:
+    4rem;
+
+  line-height:
+    0.72;
+
+  opacity:
+    0.26;
+}
+
+
+/* ============================================================
+   REVIEWER
+============================================================ */
+
+.pregoReviews__reviewer {
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  margin-top:
+    auto;
+
+  padding-top:
+    21px;
+
+  border-top:
+    1px solid
+    rgba(245, 242, 236, 0.08);
+}
+
+
+.pregoReviews__reviewerInfo {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    4px;
+}
+
+
+.pregoReviews__reviewerInfo strong {
+  color:
+    rgba(245, 242, 236, 0.92);
+
+  font-size:
+    9px;
+
+  font-weight:
+    700;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.18em;
+}
+
+
+.pregoReviews__reviewerInfo span {
+  color:
+    rgba(245, 242, 236, 0.42);
+
+  font-size:
+    9px;
+}
+
+
+/* ============================================================
+   CARD BOTTOM
+============================================================ */
+
+.pregoReviews__cardBottom {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    16px;
+
+  margin-top:
+    14px;
+}
+
+
+.pregoReviews__source {
+  color:
+    var(--gold);
+
+  font-size:
+    8px;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.16em;
+}
+
+
+.pregoReviews__read {
+  color:
+    rgba(245, 242, 236, 0.34);
+
+  font-size:
+    7px;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.12em;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* ============================================================
+   CARD HOVER
+============================================================ */
+
+@media (hover:hover) and (pointer:fine) {
+
+  .pregoReviews__card:hover {
+    transform:
+      translateY(-5px);
+
+    border-color:
+      rgba(217, 164, 65, 0.27);
+
+    background:
+      linear-gradient(
+        145deg,
+        rgba(29, 25, 20, 0.95),
+        rgba(11, 11, 11, 1)
+      );
+  }
+
+
+  .pregoReviews__card:hover::after {
+    opacity:
+      1;
+  }
+
+
+  .pregoReviews__card:hover
+  .pregoReviews__read {
+    color:
+      var(--gold-l);
+
+    transform:
+      translateX(3px);
+  }
+
+}
+
+
+/* ============================================================
+   FOOTER
+============================================================ */
+
+.pregoReviews__footer {
+  display:
+    flex;
+
+  justify-content:
+    flex-end;
+
+  margin-top:
+    clamp(
+      30px,
+      4vw,
+      45px
+    );
+}
+
+
+.pregoReviews__footer a {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    13px;
+
+  padding:
+    12px 20px;
+
+  border:
+    1px solid
+    rgba(217, 164, 65, 0.18);
+
+  border-radius:
+    999px;
+
+  color:
+    var(--gold-l);
+
+  text-decoration:
+    none;
+
+  font-size:
+    8px;
+
+  font-weight:
+    600;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.2em;
+
+  transition:
+    gap 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+
+@media (hover:hover) and (pointer:fine) {
+
+  .pregoReviews__footer a:hover {
+    gap:
+      18px;
+
+    color:
+      #080808;
+
+    background:
+      var(--gold-l);
+  }
+
+}
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 1200px) {
+
+  .pregoReviews__hero {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      55px;
+  }
+
+
+  .pregoReviews__ratingArea {
+    align-items:
+      flex-start;
+  }
+
+
+  .pregoReviews__ratingPanel {
+    max-width:
+      820px;
+  }
+
+
+  .pregoReviews__grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+}
+
+
+/* ============================================================
+   SMALL TABLET
+============================================================ */
+
+@media (max-width: 850px) {
+
+  .pregoReviews__ratingRow {
+    grid-template-columns:
+      minmax(190px, 1fr)
+      auto
+      auto;
+
+    gap:
+      18px;
+  }
+
+
+  .pregoReviews__verticalLine {
+    display:
+      none;
+  }
+
+
+  .pregoReviews__external {
+    grid-column:
+      3;
+
+    grid-row:
+      2;
+  }
+
+
+  .pregoReviews__platformStars {
+    grid-column:
+      2;
+
+    grid-row:
+      2;
+  }
+
+
+  .pregoReviews__score {
+    grid-column:
+      2 / 4;
+
+    grid-row:
+      1;
+  }
+
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 680px) {
+
+  .pregoReviews__hero {
+    min-height:
+      auto;
+
+    gap:
+      42px;
+  }
+
+
+  .pregoReviews__title {
+    font-size:
+      clamp(
+        3rem,
+        15vw,
+        4.7rem
+      );
+  }
+
+
+  .pregoReviews__description {
+    margin-top:
+      24px;
+  }
+
+
+  .pregoReviews__ratingPanel {
+    padding:
+      18px;
+
+    border-radius:
+      20px;
+  }
+
+
+  .pregoReviews__ratingRow {
+    display:
+      grid;
+
+    grid-template-columns:
+      1fr auto;
+
+    min-height:
+      auto;
+
+    gap:
+      18px;
+
+    padding:
+      18px 0;
+  }
+
+
+  .pregoReviews__ratingRow
+  +
+  .pregoReviews__ratingRow {
+    padding-top:
+      24px;
+  }
+
+
+  .pregoReviews__platform {
+    grid-column:
+      1;
+
+    grid-row:
+      1;
+  }
+
+
+  .pregoReviews__score {
+    grid-column:
+      2;
+
+    grid-row:
+      1;
+
+    justify-self:
+      end;
+  }
+
+
+  .pregoReviews__platformStars {
+    grid-column:
+      1;
+
+    grid-row:
+      2;
+
+    justify-self:
+      start;
+  }
+
+
+  .pregoReviews__external {
+    grid-column:
+      2;
+
+    grid-row:
+      2;
+
+    justify-self:
+      end;
+  }
+
+
+  .pregoReviews__logoCircle {
+    width:
+      58px;
+
+    height:
+      58px;
+
+    padding:
+      10px;
+  }
+
+
+  .pregoReviews__score strong {
+    font-size:
+      3rem;
+  }
+
+
+  .pregoReviews__external {
+    width:
+      48px;
+
+    height:
+      48px;
+
+    font-size:
+      1.4rem;
+  }
+
+
+  .pregoReviews__note {
+    justify-content:
+      flex-start;
+
+    margin-left:
+      10px;
+
+    font-size:
+      0.9rem;
+  }
+
+
+  .pregoReviews__grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .pregoReviews__card {
+    min-height:
+      auto;
+
+    padding:
+      27px 23px;
+
+    border-radius:
+      20px;
+  }
+
+
+  .pregoReviews__cardBottom {
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+
+    gap:
+      8px;
+  }
+
+
+  .pregoReviews__footer {
+    justify-content:
+      flex-start;
+  }
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .pregoReviews__ratingRow,
+  .pregoReviews__external,
+  .pregoReviews__card,
+  .pregoReviews__card::after,
+  .pregoReviews__read,
+  .pregoReviews__footer a {
+    transition:
+      none !important;
+  }
+
+
+  .pregoReviews__card:hover {
+    transform:
+      none;
+  }
+
+}
