@@ -10,7 +10,6 @@ const TILE_IMAGES: string[] = [];
 
 const HEADLINE = {
   opening: "Craving the Real Taste of Malta?",
-  // emphasis: "Crave the next bite.",
 };
 
 const COLUMN_COUNT = 7;
@@ -108,10 +107,11 @@ export default function Hero() {
         </div>
 
         <div className="hero-inner">
+
           <h1 className="prego-hero-title" id="home-title">
-            <span>{HEADLINE.opening}</span>{" "}
-            <em>{HEADLINE.emphasis}</em>
+            <span>{HEADLINE.opening}</span>
           </h1>
+
           <div className="hero-cta">
             <a href="#reservations" className="btn btn--gold">
               <span>{hero.reserveButton}</span>
