@@ -1,24 +1,195 @@
-.prego-gallery{background:#0b0a09;color:#f5f0e8;overflow:hidden;padding:clamp(70px,9vw,130px) 0}
-.prego-gallery *{box-sizing:border-box}
-.prego-gallery__wrap{width:min(1400px,92%);margin:auto}
-.prego-gallery__heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:30px}
-.prego-gallery__eyebrow{display:block;color:#d9ad64;text-transform:uppercase;font-size:.7rem;letter-spacing:.2em;margin-bottom:12px}
-.prego-gallery__heading h2{font-family:var(--font-archivo),Arial,sans-serif;font-weight:800;line-height:1;letter-spacing:-.055em;font-size:clamp(2.7rem,6vw,6rem);margin:0}
-.prego-gallery__controls{display:flex;gap:12px;flex-shrink:0}
-.prego-gallery__controls button{width:50px;height:50px;border-radius:50%;border:1px solid rgba(217,173,100,.5);background:transparent;color:#e6c186;font-size:1.5rem;cursor:pointer;transition:background .2s,color .2s}
-.prego-gallery__controls button:hover:not(:disabled){background:#d9ad64;color:#10100e}
-.prego-gallery__controls button:disabled{opacity:.28;cursor:not-allowed}
-.prego-gallery__controls button:focus-visible{outline:2px solid #fff;outline-offset:4px}
-.prego-gallery__track{display:flex;gap:clamp(12px,2vw,26px);overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:0;scrollbar-width:none;overscroll-behavior-inline:contain;padding-bottom:15px}
-.prego-gallery__track::-webkit-scrollbar{display:none}
-.prego-gallery__track:focus-visible{outline:2px solid #d9ad64;outline-offset:2px}
-.prego-gallery__slide{position:relative;flex:0 0 clamp(310px,44vw,640px);aspect-ratio:1.25;margin:0;scroll-snap-align:center;overflow:hidden;background:#17130f}
-.prego-gallery__slide:nth-child(2n){aspect-ratio:1.05}
-.prego-gallery__slide img{object-fit:cover;filter:none!important;transition:transform .7s cubic-bezier(.22,1,.36,1)}
-.prego-gallery__slide:hover img{transform:scale(1.035)}
-.prego-gallery__slide::after{content:"";position:absolute;inset:65% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.55));pointer-events:none}
-.prego-gallery__slide figcaption{position:absolute;z-index:1;left:22px;bottom:22px;color:white;letter-spacing:.07em;font-size:.85rem;font-weight:600}
-.prego-gallery__progress{height:2px;background:rgba(255,255,255,.14);margin-top:22px}
-.prego-gallery__progress span{height:100%;display:block;background:#d9ad64;transition:width .3s ease}
-@media(max-width:640px){.prego-gallery__wrap{width:92%}.prego-gallery__heading{align-items:center}.prego-gallery__heading h2{font-size:clamp(2.2rem,9vw,3.3rem)}.prego-gallery__controls button{width:42px;height:42px}.prego-gallery__track{gap:12px}.prego-gallery__slide{flex-basis:84vw;aspect-ratio:4/5}.prego-gallery__slide:nth-child(2n){aspect-ratio:4/5}}
-@media(prefers-reduced-motion:reduce){.prego-gallery__slide img,.prego-gallery__progress span{transition:none}.prego-gallery__slide:hover img{transform:none}}
+.prego-gallery {
+    background: #0b0a09;
+    color: #f5f0e8;
+    overflow: hidden;
+    padding: clamp(70px, 9vw, 130px) 0
+}
+
+.prego-gallery * {
+    box-sizing: border-box
+}
+
+.prego-gallery__wrap {
+    width: min(1400px, 92%);
+    margin: auto
+}
+
+.prego-gallery__heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 30px
+}
+
+.prego-gallery__eyebrow {
+    display: block;
+    color: #d9ad64;
+    text-transform: uppercase;
+    font-size: .7rem;
+    letter-spacing: .2em;
+    margin-bottom: 12px
+}
+
+.prego-gallery__heading h2 {
+    font-family: var(--font-archivo), Arial, sans-serif;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -.055em;
+    font-size: clamp(2.7rem, 6vw, 6rem);
+    margin: 0
+}
+
+.prego-gallery__controls {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0
+}
+
+
+.prego-gallery__controls button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(217, 173, 100, 0.5);
+  background: transparent;
+  color: #e6c186;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.prego-gallery__controls button:hover:not(:disabled) {
+    background: #d9ad64;
+    color: #10100e
+}
+
+.prego-gallery__controls button:disabled {
+    opacity: .28;
+    cursor: not-allowed
+}
+
+.prego-gallery__controls button:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 4px
+}
+
+.prego-gallery__track {
+    display: flex;
+    gap: clamp(12px, 2vw, 26px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0;
+    scrollbar-width: none;
+    overscroll-behavior-inline: contain;
+    padding-bottom: 15px
+}
+
+.prego-gallery__track::-webkit-scrollbar {
+    display: none
+}
+
+.prego-gallery__track:focus-visible {
+    outline: 2px solid #d9ad64;
+    outline-offset: 2px
+}
+
+.prego-gallery__slide {
+    position: relative;
+    flex: 0 0 clamp(310px, 44vw, 640px);
+    aspect-ratio: 1.25;
+    margin: 0;
+    scroll-snap-align: center;
+    overflow: hidden;
+    background: #17130f
+}
+
+.prego-gallery__slide:nth-child(2n) {
+    aspect-ratio: 1.05
+}
+
+.prego-gallery__slide img {
+    object-fit: cover;
+    filter: none !important;
+    transition: transform .7s cubic-bezier(.22, 1, .36, 1)
+}
+
+.prego-gallery__slide:hover img {
+    transform: scale(1.035)
+}
+
+.prego-gallery__slide::after {
+    content: "";
+    position: absolute;
+    inset: 65% 0 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, .55));
+    pointer-events: none
+}
+
+.prego-gallery__slide figcaption {
+    position: absolute;
+    z-index: 1;
+    left: 22px;
+    bottom: 22px;
+    color: white;
+    letter-spacing: .07em;
+    font-size: .85rem;
+    font-weight: 600
+}
+
+.prego-gallery__progress {
+    height: 2px;
+    background: rgba(255, 255, 255, .14);
+    margin-top: 22px
+}
+
+.prego-gallery__progress span {
+    height: 100%;
+    display: block;
+    background: #d9ad64;
+    transition: width .3s ease
+}
+
+@media(max-width:640px) {
+    .prego-gallery__wrap {
+        width: 92%
+    }
+
+    .prego-gallery__heading {
+        align-items: center
+    }
+
+    .prego-gallery__heading h2 {
+        font-size: clamp(2.2rem, 9vw, 3.3rem)
+    }
+
+    .prego-gallery__controls button {
+        width: 42px;
+        height: 42px
+    }
+
+    .prego-gallery__track {
+        gap: 12px
+    }
+
+    .prego-gallery__slide {
+        flex-basis: 84vw;
+        aspect-ratio: 4/5
+    }
+
+    .prego-gallery__slide:nth-child(2n) {
+        aspect-ratio: 4/5
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+    .prego-gallery__slide img,
+    .prego-gallery__progress span {
+        transition: none
+    }
+
+    .prego-gallery__slide:hover img {
+        transform: none
+    }
+}
